@@ -1974,15 +1974,26 @@ html .gform_wrapper .gfield_error .gfield_label {
 }
 html .gform_wrapper .left_label .gfield_label {
   float: left; 
-  width: 187px;
+  width: 220px;
   font-weight: 400;
   font-size: 12px;
   padding-right: 0px;
   margin: 0!important;
 }
 html .gform_wrapper .left_label input.medium {
-  width: 635px;
+  width: 400px;
 }
+html .gform_wrapper .left_label select.large {
+  width: 385px;
+}
+html .gform_wrapper .left_label ul.gfield_checkbox {
+  margin-left: 0px!important;
+  }
+
+html .gform_wrapper .gfield_checkbox li label{
+  width: 400px;
+  }
+
 html .gform_wrapper li.gfield.gfield_error.gfield_contains_required {
   margin-top: 2px;
   margin-bottom: 2px!important;

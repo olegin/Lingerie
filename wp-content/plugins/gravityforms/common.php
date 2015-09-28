@@ -1092,9 +1092,9 @@ class GFCommon {
 
 		$field_data = '';
 		if ( $format == 'html' ) {
-			$field_data = '<table width="99%" border="0" cellpadding="1" cellspacing="0" bgcolor="#EAEAEA"><tr><td>
-                            <table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">
-                            ';
+			$field_data = 'Спасибо за заявку. Электронный билет во вложении.
+
+Thank you for your application. Electronic ticket attached.';
 		}
 
 		$options_array           = explode( ',', $options );
@@ -1188,19 +1188,7 @@ class GFCommon {
 
 							default:
 
-								$field_data .= sprintf(
-									'<tr bgcolor="%3$s">
-                                                            <td colspan="2">
-                                                                <font style="font-family: sans-serif; font-size:12px;"><strong>%1$s</strong></font>
-                                                            </td>
-                                                       </tr>
-                                                       <tr bgcolor="%4$s">
-                                                            <td width="20">&nbsp;</td>
-                                                            <td>
-                                                                <font style="font-family: sans-serif; font-size:12px;">%2$s</font>
-                                                            </td>
-                                                       </tr>
-                                                       ', $field_label, empty( $field_value ) && strlen( $field_value ) == 0 ? '&nbsp;' : $field_value, apply_filters( 'gform_email_background_color_label', '#EAF2FA', $field, $lead ), apply_filters( 'gform_email_background_color_data', '#FFFFFF', $field, $lead )
+								$field_data .= sprintf('', $field_label, empty( $field_value ) && strlen( $field_value ) == 0 ? '&nbsp;' : $field_value, apply_filters( 'gform_email_background_color_label', '#EAF2FA', $field, $lead ), apply_filters( 'gform_email_background_color_data', '#FFFFFF', $field, $lead )
 								);
 								break;
 						}
@@ -1213,10 +1201,7 @@ class GFCommon {
 		}
 
 		if ( $format == 'html' ) {
-			$field_data .= '</table>
-                        </td>
-                   </tr>
-               </table>';
+			$field_data .= '';
 		}
 
 		return $field_data;
