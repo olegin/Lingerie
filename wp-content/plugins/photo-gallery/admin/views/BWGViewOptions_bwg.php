@@ -209,6 +209,16 @@ class BWGViewOptions_bwg {
               </tr>
               <tr>
                 <td class="spider_label_options">
+                  <label>Show tag box:</label>
+                </td>
+                <td>
+                  <input type="radio" name="show_tag_box" id="show_tag_box_1" value="1" <?php if ($row->show_tag_box) echo 'checked="checked"'; ?> /><label for="show_tag_box_1">Yes</label>
+                  <input type="radio" name="show_tag_box" id="show_tag_box_0" value="0" <?php if (!$row->show_tag_box) echo 'checked="checked"'; ?> /><label for="show_tag_box_0">No</label>
+                  <div class="spider_description"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="spider_label_options">
                   <label>Preload images:</label>
                 </td>
                 <td>
@@ -226,7 +236,7 @@ class BWGViewOptions_bwg {
                   <div class="spider_description">Count of images to preload (0 for all).</div>
                 </td>
               </tr>
-	      <tr>
+              <tr>
                 <td class="spider_label_options">
                   <label>Import from Media Library:</label>
                 </td>
@@ -237,16 +247,16 @@ class BWGViewOptions_bwg {
                 </td>
               </tr>
               <tr>
-              <td class="spider_label_options">
-                <label>Enable href attribute:</label>
-              </td>
-              <td>
-                <input type="radio" name="enable_seo" id="enable_seo_1" value="1" <?php if ($row->enable_seo) echo 'checked="checked"'; ?> /><label for="enable_seo_1">Yes</label>
-                <input type="radio" name="enable_seo" id="enable_seo_0" value="0" <?php if (!$row->enable_seo) echo 'checked="checked"'; ?> /><label for="enable_seo_0">No</label>
-               <div class="spider_description">Disable this option only if it conflicts with your theme.</div>
-              </td>
-            </tr>
-	    <tr>
+                <td class="spider_label_options">
+                  <label>Enable href attribute:</label>
+                </td>
+                <td>
+                  <input type="radio" name="enable_seo" id="enable_seo_1" value="1" <?php if ($row->enable_seo) echo 'checked="checked"'; ?> /><label for="enable_seo_1">Yes</label>
+                  <input type="radio" name="enable_seo" id="enable_seo_0" value="0" <?php if (!$row->enable_seo) echo 'checked="checked"'; ?> /><label for="enable_seo_0">No</label>
+                 <div class="spider_description">Disable this option only if it conflicts with your theme.</div>
+                </td>
+              </tr>
+              <tr>
                 <td class="spider_label_options">
                   <label>Meta auto-fill:</label>
                 </td>
@@ -288,12 +298,12 @@ class BWGViewOptions_bwg {
                       </td>
                       <td>
                         <input type="text" id="built_in_watermark_url" name="built_in_watermark_url" style="width: 68%;" value="<?php echo $row->built_in_watermark_url; ?>" style="display:inline-block;" onchange="preview_built_in_watermark()" />
-                         <?php
-                         $query_url = add_query_arg(array('action' => 'addImages', 'width' => '700', 'height' => '550', 'extensions' => 'png', 'callback' => 'bwg_add_built_in_watermark_image'), admin_url('admin-ajax.php'));
-                         $query_url = wp_nonce_url( $query_url, 'addImages', 'bwg_nonce' );
-                         $query_url =  add_query_arg(array('TB_iframe' => '1'), $query_url );
-                         ?>
-                         <a href="<?php echo $query_url; ?>" id="button_add_built_in_watermark_image" class="button-primary thickbox thickbox-preview"
+                        <?php
+                        $query_url = add_query_arg(array('action' => 'addImages', 'width' => '700', 'height' => '550', 'extensions' => 'png', 'callback' => 'bwg_add_built_in_watermark_image'), admin_url('admin-ajax.php'));
+                        $query_url = wp_nonce_url( $query_url, 'addImages', 'bwg_nonce' );
+                        $query_url =  add_query_arg(array('TB_iframe' => '1'), $query_url );
+                        ?>
+                        <a href="<?php echo $query_url; ?>" id="button_add_built_in_watermark_image" class="button-primary thickbox thickbox-preview"
                            title="Add image" 
                            onclick="return false;"
                            style="margin-bottom:5px;">
@@ -441,11 +451,13 @@ class BWGViewOptions_bwg {
                       </td>
                       <td>
                         <input type="text" id="watermark_url" name="watermark_url" style="width: 68%;" value="<?php echo $row->watermark_url; ?>" style="display:inline-block;" onchange="preview_watermark()" />
+                        
                         <?php
                         $query_url = add_query_arg(array('action' => 'addImages', 'width' => '700', 'height' => '550', 'extensions' => 'jpg,jpeg,png,gif', 'callback' => 'bwg_add_watermark_image'), admin_url('admin-ajax.php'));
                         $query_url = wp_nonce_url( $query_url, 'addImages', 'bwg_nonce' );
                         $query_url = add_query_arg(array('TB_iframe' => '1'), $query_url );
                         ?>
+
                         <a href="<?php echo $query_url; ?>" id="button_add_watermark_image" class="button-primary thickbox thickbox-preview"
                            title="Add image" 
                            onclick="return false;"
@@ -881,7 +893,7 @@ class BWGViewOptions_bwg {
                         <div class="spider_description"></div>
                       </td>
                     </tr>
-					<tr id="tr_image_cycle">
+                    <tr id="tr_image_cycle">
                       <td class="spider_label_options">
                         <label>Enable loop:</label>
                       </td>
@@ -891,7 +903,7 @@ class BWGViewOptions_bwg {
                         <div class="spider_description"></div>
                       </td>
                     </tr>
-		    <tr>
+                    <tr>
                       <td class="spider_label_options spider_free_version_label">
                         <label>Enable AddThis:</label>
                       </td>

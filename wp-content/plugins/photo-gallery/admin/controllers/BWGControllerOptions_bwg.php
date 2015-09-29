@@ -133,7 +133,7 @@ class BWGControllerOptions_bwg {
     $slideshow_filmstrip_height = (isset($_POST['slideshow_filmstrip_height']) ? esc_html(stripslashes($_POST['slideshow_filmstrip_height'])) : 70);
     $slideshow_enable_title = (isset($_POST['slideshow_enable_title']) ? esc_html(stripslashes($_POST['slideshow_enable_title'])) : 0);
     $slideshow_title_position = (isset($_POST['slideshow_title_position']) ? esc_html(stripslashes($_POST['slideshow_title_position'])) : 'top-right');
-	$slideshow_title_full_width = (isset($_POST['slideshow_title_full_width']) ? esc_html(stripslashes($_POST['slideshow_title_full_width'])) : 0);
+    $slideshow_title_full_width = (isset($_POST['slideshow_title_full_width']) ? esc_html(stripslashes($_POST['slideshow_title_full_width'])) : 0);
     $slideshow_enable_description = (isset($_POST['slideshow_enable_description']) ? esc_html(stripslashes($_POST['slideshow_enable_description'])) : 1);
     $slideshow_description_position = (isset($_POST['slideshow_description_position']) ? esc_html(stripslashes($_POST['slideshow_description_position'])) : 'bottom-right');
     $slideshow_enable_music = (isset($_POST['slideshow_enable_music']) ? esc_html(stripslashes($_POST['slideshow_enable_music'])) : 0);
@@ -228,6 +228,7 @@ class BWGControllerOptions_bwg {
     $carousel_prev_next_butt = (isset($_POST['carousel_prev_next_butt']) ? esc_html(stripslashes($_POST['carousel_prev_next_butt'])) : 1);
     $carousel_play_pause_butt = (isset($_POST['carousel_play_pause_butt']) ? esc_html(stripslashes($_POST['carousel_play_pause_butt'])) : 1);
     $bwg_permissions = (isset($_POST['permissions']) ? esc_html(stripslashes($_POST['permissions'])) : 'manage_options');
+	$show_tag_box = (isset($_POST['show_tag_box']) ? esc_html(stripslashes($_POST['show_tag_box'])) : 0);
 
     $save = $wpdb->update($wpdb->prefix . 'bwg_option', array(
       'images_directory' => $images_directory,
@@ -362,6 +363,7 @@ class BWGControllerOptions_bwg {
       'carousel_prev_next_butt' => $carousel_prev_next_butt,
       'carousel_play_pause_butt' => $carousel_play_pause_butt,
       'permissions' => $bwg_permissions,
+	  'show_tag_box' => $show_tag_box,
       ), array('id' => 1));
 
     if ($save !== FALSE) {      

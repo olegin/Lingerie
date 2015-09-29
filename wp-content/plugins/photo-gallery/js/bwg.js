@@ -1077,14 +1077,10 @@ function bwg_get_embed_info(input_id) {
 
    // get from the server data for the url. Here we use the server as a proxy, since Cross-Origin Resource Sharing AJAX is forbidden.
   jQuery.post(ajax_url, data, function(response) {
-    
-    
     if(response == false){
-
       alert('Error: cannot get response from the server.');
       jQuery('#opacity_div').hide();
       jQuery('#loading_div').hide();
-      
       return '';
     }
     else{  

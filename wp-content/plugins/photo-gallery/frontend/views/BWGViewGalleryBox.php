@@ -46,6 +46,7 @@ class BWGViewGalleryBox {
     $popup_info_full_width = (isset($_GET['popup_info_full_width']) ? esc_html($_GET['popup_info_full_width']) : 0);
     $popup_enable_rate = (isset($_GET['popup_enable_rate']) ? esc_html($_GET['popup_enable_rate']) : 0);
     $popup_hit_counter = (isset($_GET['popup_hit_counter']) ? esc_html($_GET['popup_hit_counter']) : 0);
+    $show_tag_box = (isset($_GET['show_tag_box']) ? esc_html($_GET['show_tag_box']) : 0);
 
     if ($enable_image_filmstrip) {
       $image_filmstrip_height = (isset($_GET['image_filmstrip_height']) ? esc_html($_GET['image_filmstrip_height']) : '20');
@@ -86,7 +87,7 @@ class BWGViewGalleryBox {
       $image_rows = $this->model->get_image_rows_data_tag($tag_id, $sort_by, $order_by);
     }
     else {
-      $image_rows = $this->model->get_image_rows_data($gallery_id, $sort_by, $order_by);
+      $image_rows = $this->model->get_image_rows_data($gallery_id, $bwg, $sort_by, $order_by);
     }
     $image_id = (isset($_POST['image_id']) ? (int) $_POST['image_id'] : $current_image_id);
     $comment_rows = $this->model->get_comment_rows_data($image_id);

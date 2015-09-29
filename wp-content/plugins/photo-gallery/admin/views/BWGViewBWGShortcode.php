@@ -230,12 +230,17 @@ class BWGViewBWGShortcode {
                       <input type="radio" name="show_search_box" id="show_search_box_0" value="0" <?php if (!$option_row->show_search_box) echo 'checked="checked"'; ?> onchange="bwg_show_search_box()" /><label for="show_search_box_0">No</label>
                     </td>
                   </tr>
-									
                   <tr id="tr_search_box_width">
                     <td class="spider_label"><label for="search_box_width">Search box width: </label></td>
                     <td><input type="text" name="search_box_width" id="search_box_width" value="<?php echo $option_row->search_box_width; ?>" class="spider_int_input" /> px</td>
                   </tr>
-									
+                  <tr id="tr_show_tag_box">
+                    <td class="spider_label"><label>Show tag box: </label></td>
+                    <td>
+                      <input type="radio" name="show_tag_box" id="show_tag_box_1" value="1" <?php if ($option_row->show_tag_box) echo 'checked="checked"'; ?> /><label for="show_tag_box_1">Yes</label>
+                      <input type="radio" name="show_tag_box" id="show_tag_box_0" value="0" <?php if (!$option_row->show_tag_box) echo 'checked="checked"'; ?> /><label for="show_search_box_0">No</label>
+                    </td>
+                  </tr>
 									<tr id="tr_show_sort_images">
                     <td class="spider_label"><label>Show "Order by" dropdown list: </label></td>
                     <td>
@@ -243,7 +248,6 @@ class BWGViewBWGShortcode {
                       <input type="radio" name="show_sort_images" id="show_sort_images_0" value="0" <?php if (!$option_row->show_sort_images) echo 'checked="checked"'; ?> onchange="" /><label for="show_sort_images_0">No</label>
                     </td>
                   </tr>
-				  
                   <!--Thumbnails, Masonry viewies-->
                   <tr id="tr_masonry_hor_ver">
                     <td class="spider_label"><label>Masonry: </label></td>
@@ -1131,6 +1135,12 @@ class BWGViewBWGShortcode {
                   else {
                     jQuery("#show_sort_images_0").attr('checked', 'checked');
                   }
+                  if (short_code['show_tag_box'] == 1) {
+                    jQuery("#show_tag_box_1").attr('checked', 'checked');
+                  }
+                  else {
+                    jQuery("#show_tag_box_0").attr('checked', 'checked');
+                  }
                   if (short_code['search_box_width']) {
                     jQuery("#search_box_width").val(short_code['search_box_width']);
                   }
@@ -1328,6 +1338,12 @@ class BWGViewBWGShortcode {
                   else {
                     jQuery("#compuct_album_resizable_mosaic_0").attr('checked', 'checked');
                   }
+                  if (short_code['show_tag_box'] == 1) {
+                    jQuery("#show_tag_box_1").attr('checked', 'checked');
+                  }
+                  else {
+                    jQuery("#show_tag_box_0").attr('checked', 'checked');
+                  }
                   jQuery("#compuct_album_mosaic_total_width").val(short_code['compuct_album_mosaic_total_width']);
                   break;
 
@@ -1408,6 +1424,12 @@ class BWGViewBWGShortcode {
                   else {
                     jQuery("#extended_album_resizable_mosaic_0").attr('checked', 'checked');
                   }
+                  if (short_code['show_tag_box'] == 1) {
+                    jQuery("#show_tag_box_1").attr('checked', 'checked');
+                  }
+                  else {
+                    jQuery("#show_tag_box_0").attr('checked', 'checked');
+                  }
                   jQuery("#extended_album_mosaic_total_width").val(short_code['extended_album_mosaic_total_width']);
                   break;
 
@@ -1456,7 +1478,13 @@ class BWGViewBWGShortcode {
                   else {
                     jQuery("#popup_info_no").attr('checked', 'checked');
                   }
-				  if (short_code['popup_info_full_width'] == 1) {
+                  if (short_code['show_tag_box'] == 0 || !short_code['show_tag_box']) {
+                    jQuery("#show_tag_box_0").attr('checked', 'checked');
+                  }
+                  else {
+                    jQuery("#show_tag_box_1").attr('checked', 'checked');
+                  }
+                  if (short_code['popup_info_full_width'] == 1) {
                     jQuery("#popup_info_full_width_1").attr('checked', 'checked');
                   }
                   else {
@@ -1624,6 +1652,7 @@ class BWGViewBWGShortcode {
                 tagtext += ' thumb_height="' + jQuery("#thumb_height").val() + '"';
                 title = ' gal_title="' + jQuery.trim(jQuery('#gallery option:selected').text().replace("'", "").replace('"', '')) + '"';
                 tagtext += ' load_more_image_count="' + jQuery("#load_more_image_count").val() + '"';
+                tagtext += ' show_tag_box="' + jQuery("input[name=show_tag_box]:checked").val() + '"';
                 break;
 
               }
@@ -1688,6 +1717,7 @@ class BWGViewBWGShortcode {
                 tagtext += ' compuct_album_enable_page="' + jQuery("input[name=compuct_album_enable_page]:checked").val() + '"';
                 tagtext += ' compuct_album_load_more_image_count="' + jQuery("#compuct_album_load_more_image_count").val() + '"';
                 tagtext += ' compuct_albums_per_page_load_more="' + jQuery("#compuct_albums_per_page_load_more").val() + '"';
+                tagtext += ' show_tag_box="' + jQuery("input[name=show_tag_box]:checked").val() + '"';
 								title = ' gal_title="' + jQuery.trim(jQuery('#album option:selected').text().replace("'", "").replace('"', '')) + '"';
                 break;
 
@@ -1716,6 +1746,7 @@ class BWGViewBWGShortcode {
                 tagtext += ' extended_album_enable_page="' + jQuery("input[name=extended_album_enable_page]:checked").val() + '"';
                 tagtext += ' extended_album_load_more_image_count="' + jQuery("#extended_album_load_more_image_count").val() + '"';
                 tagtext += ' extended_albums_per_page_load_more="' + jQuery("#extended_albums_per_page_load_more").val() + '"';
+                tagtext += ' show_tag_box="' + jQuery("input[name=show_tag_box]:checked").val() + '"';
 								title = ' gal_title="' + jQuery.trim(jQuery('#album option:selected').text().replace("'", "").replace('"', '')) + '"';
                 break;
 
@@ -1746,6 +1777,7 @@ class BWGViewBWGShortcode {
               tagtext += ' popup_enable_google="' + jQuery("input[name=popup_enable_google]:checked").val() + '"';
               tagtext += ' popup_enable_pinterest="' + jQuery("input[name=popup_enable_pinterest]:checked").val() + '"';
               tagtext += ' popup_enable_tumblr="' + jQuery("input[name=popup_enable_tumblr]:checked").val() + '"';
+              tagtext += ' show_tag_box="' + jQuery("input[name=show_tag_box]:checked").val() + '"';
             }
             // Watermark parameters.
             tagtext += ' watermark_type="' + jQuery("input[name=watermark_type]:checked").val() + '"';

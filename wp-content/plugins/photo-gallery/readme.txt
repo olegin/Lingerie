@@ -4,7 +4,7 @@ Donate link: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
 Tags: photo, photo gallery, image gallery, video gallery, gallery, galleries,  wordpress gallery plugin, images gallery, album, photo albums, simple gallery, best gallery plugin, free photo gallery, wp gallery, wordpress gallery, website gallery, gallery shortcode, best gallery, picture, pictures, gallery slider, photo album, photogallery, widget gallery, image, images, photos,  gallery lightbox, photoset, wordpress photo gallery plugin, wp gallery plugins, responsive wordpress photo gallery, media, image album, filterable gallery, banner rotator, fullscreen gallery, fotogalerie, galleria, galerie, galeri, responsive gallery, add album,  add gallery, add pictures, fotoalbum, foto, gallery decription, multiple pictures, photoalbum, upload images, upload photos, view images, view pictures, admin, AJAX, comments, gallery image, image lightbox, image rotate, image slideshow, image slider, jquery, jquery gallery, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, responsive, watermarking, watermarks,fullscreen slider, lightbox, photography, sidebar, slide, youtube, vimeo, videos, instagram, facebook, mosaic 
 Requires at least: 3.4 
 Tested up to: 4.3 
-Stable tag: 1.2.60    
+Stable tag: 1.2.61    
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,7 @@ The plugin allows displaying galleries/albums within the following views:
 *   Masonry Album view (commercial version)
 *   Extended Album view for displaying albums with descriptions
 *   Blog Style gallery view (commercial version)
+
 
 You can make the required customizations for the view in the shortcode in advance to adding in the posts/pages. 
 
@@ -101,8 +102,8 @@ Upgrade to [WordPress Photo Gallery Pro](https://web-dorado.com/products/wordpre
 *   Commenting possibility with Captcha protection possibility.   
 *   Social sharing possibility (Facebook, Google+, Twitter, Pinterest and Tumblr).    
 *   Dynamic Photo Gallery Tag Cloud widget  with image tag cloud and text tag cloud options.   
-*   Possibility to include both videos and images within a single gallery.   
-
+*   Possibility to include both videos and images within a single gallery.    
+*   Add on support.   
 
 ### Supported languages 
 
@@ -212,6 +213,9 @@ Yes, it is possible to add advertising and/or watermark over the images. In both
 
 
 == Changelog ==
+
+= 1.2.61 =
+Added: Filter by tags in frontend.
 
 = 1.2.60 =
 Changed: Notices show order.  

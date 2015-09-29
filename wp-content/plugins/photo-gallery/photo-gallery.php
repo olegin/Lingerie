@@ -4,7 +4,7 @@
  * Plugin Name: Photo Gallery
  * Plugin URI: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
  * Description: This plugin is a fully responsive gallery plugin with advanced functionality.  It allows having different image galleries for your posts and pages. You can create unlimited number of galleries, combine them into albums, and provide descriptions and tags.
- * Version: 1.2.60
+ * Version: 1.2.61
  * Author: WebDorado
  * Author URI: https://web-dorado.com/
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -340,7 +340,8 @@ function bwg_shortcode($params) {
         'enable_image_twitter' => 1,
         'enable_image_google' => 1,
         'watermark_type' => 'none',
-        'load_more_image_count' => 15
+        'load_more_image_count' => 15,
+        'show_tag_box' => 0
       ), $params);
       break;
 
@@ -786,6 +787,7 @@ function bwg_activate() {
     `permissions` varchar(20) NOT NULL,
     `facebook_app_id` varchar(64) NOT NULL,
     `facebook_app_secret` varchar(64) NOT NULL,
+    `show_tag_box` tinyint(1) NOT NULL,
     PRIMARY KEY (`id`)
   ) DEFAULT CHARSET=utf8;";
   $wpdb->query($bwg_option);
@@ -1417,6 +1419,9 @@ function bwg_activate() {
       'carousel_prev_next_butt' => 1,
       'carousel_play_pause_butt' => 1,
       'permissions' => 'manage_options',
+      'facebook_app_id' => '',
+      'facebook_app_secret' => '',
+      'show_tag_box' => 0,
     ));
   }
   $exists_default = $wpdb->get_var('SELECT count(id) FROM ' . $wpdb->prefix . 'bwg_theme');
@@ -2330,7 +2335,7 @@ function bwg_activate() {
     ));
   }
   $version = get_option("wd_bwg_version");
-  $new_version = '1.2.60';
+  $new_version = '1.2.61';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -2378,7 +2383,7 @@ wp_oembed_add_provider( '#https://instagr(\.am|am\.com)/p/.*#i', 'https://api.in
 
 function bwg_update_hook() {
 	$version = get_option("wd_bwg_version");
-  $new_version = '1.2.60';
+  $new_version = '1.2.61';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -2551,7 +2556,8 @@ function bwg_front_end_scripts() {
 
   wp_enqueue_script('bwg_frontend', WD_BWG_FRONT_URL . '/js/bwg_frontend.js', array(), $version);
   wp_enqueue_style('bwg_frontend', WD_BWG_FRONT_URL . '/css/bwg_frontend.css', array(), $version);
-
+  wp_enqueue_script('bwg_sumoselect', WD_BWG_FRONT_URL . '/js/jquery.sumoselect.min.js', array(), $version);
+  wp_enqueue_style('bwg_sumoselect', WD_BWG_FRONT_URL . '/css/sumoselect.css', array(), $version);
   // Styles/Scripts for popup.
   wp_enqueue_style('bwg_font-awesome', WD_BWG_FRONT_URL . '/css/font-awesome/font-awesome.css', array(), '4.2.0');
   wp_enqueue_script('bwg_jquery_mobile', WD_BWG_FRONT_URL . '/js/jquery.mobile.js', array(), $version);
@@ -2563,6 +2569,9 @@ function bwg_front_end_scripts() {
     'bwg_field_required'  => __('field is required.', 'bwg'),
     'bwg_mail_validation' => __('This is not a valid email address.', 'bwg'),
     'bwg_search_result' => __('There are no images matching your search.', 'bwg'),
+  ));
+  wp_localize_script('bwg_sumoselect', 'bwg_objectsL10n', array(
+    'bwg_select_tag'  => __('Select Tag.', 'bwg'),
   ));
 }
 add_action('wp_enqueue_scripts', 'bwg_front_end_scripts');

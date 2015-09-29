@@ -88,6 +88,8 @@ function spider_ajax_save(form_id) {
   post_data["ajax_task"] = jQuery("#ajax_task").val();
   post_data["image_id"] = jQuery("#image_id").val();
   post_data["comment_id"] = jQuery("#comment_id").val();
+    post_data["bwg_tag_id_" + id] = jQuery("#bwg_tag_id_" + id).val();
+
   // Loading.
   jQuery("#ajax_loading").css('height', jQuery(".bwg_comments").css('height'));
   jQuery("#opacity_div").css('width', jQuery(".bwg_comments").css('width'));

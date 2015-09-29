@@ -79,6 +79,9 @@ class BWGViewThumbnails {
     if (!isset($params['image_enable_page'])) {
       $params['image_enable_page'] = 1;
     }
+    if (!isset($params['show_tag_box'])) {
+      $params['show_tag_box'] = 0;
+    }
     $from = (isset($params['from']) ? esc_html($params['from']) : 0);
     $sort_direction = ' ' . $params['order_by'] . ' ';
     $options_row = $this->model->get_options_row_data();
@@ -173,6 +176,7 @@ class BWGViewThumbnails {
     }
     $rgb_page_nav_font_color = WDWLibrary::spider_hex2rgb($theme_row->page_nav_font_color);
     $rgb_thumbs_bg_color = WDWLibrary::spider_hex2rgb($theme_row->thumbs_bg_color);
+    $tags_rows = $this->model->get_tags_rows_data($params['gallery_id']);
     ?>
     <style>
       #bwg_container1_<?php echo $bwg; ?> #bwg_container2_<?php echo $bwg; ?> .bwg_standart_thumbnails_<?php echo $bwg; ?> * {
@@ -374,6 +378,9 @@ class BWGViewThumbnails {
           if (isset($params['show_sort_images']) && $params['show_sort_images']) {
             WDWLibrary::ajax_html_frontend_sort_box('gal_front_form_' . $bwg, $bwg, 'bwg_standart_thumbnails_' . $bwg, $params['sort_by'], $params['search_box_width']);
           }
+          if (isset($params['show_tag_box']) && $params['show_tag_box']) {
+              WDWLibrary::ajax_html_frontend_search_tags('gal_front_form_' . $bwg, $bwg, 'bwg_standart_thumbnails_' . $bwg, $images_count,$tags_rows);
+          }
           ?>
           <div class="bwg_back_<?php echo $bwg; ?>"><?php echo $options_row->showthumbs_name ? $gallery_row->name : ''; ?></div>
           <div style="background-color:rgba(0, 0, 0, 0); text-align: <?php echo $theme_row->thumb_align; ?>; width:100%; position: relative;">
@@ -544,7 +551,8 @@ class BWGViewThumbnails {
         }
       ?>
       function bwg_gallery_box_<?php echo $bwg; ?>(image_id) {
-        spider_createpopup('<?php echo addslashes(add_query_arg($params_array, admin_url('admin-ajax.php'))); ?>&image_id=' + image_id, '<?php echo $bwg; ?>', '<?php echo $params['popup_width']; ?>', '<?php echo $params['popup_height']; ?>', 1, 'testpopup', 5);
+        var filterTags = jQuery("#bwg_tags_id_bwg_standart_thumbnails_<?php echo $bwg; ?>" ).val() ? jQuery("#bwg_tags_id_bwg_standart_thumbnails_<?php echo $bwg; ?>" ).val() : 0;
+        spider_createpopup('<?php echo addslashes(add_query_arg($params_array, admin_url('admin-ajax.php'))); ?>&image_id=' + image_id + "&filter_tag_<?php echo $bwg; ?>=" +  filterTags, '<?php echo $bwg; ?>', '<?php echo $params['popup_width']; ?>', '<?php echo $params['popup_height']; ?>', 1, 'testpopup', 5);
       }
       function bwg_document_ready_<?php echo $bwg; ?>() {
         var bwg_touch_flag = false;

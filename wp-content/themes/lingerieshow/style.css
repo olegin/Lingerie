@@ -1527,7 +1527,7 @@ position:relative;
 .mline li ul.sub-menu .menu-item {
  white-space: nowrap;
 }
-.mline li:hover ul{
+.mline li:hover >ul{
  display:block; 
 }
 .mline li ul li,
@@ -1540,6 +1540,11 @@ position:relative;
 .mline li ul li a{
     font-size: 16px;
   line-height: 1.1;
+}
+.mline .menu-item .sub-menu .menu-item .sub-menu {
+ margin-left: 20px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,1);
+    z-index: 1;
 }
 .hcont{
  width:100%;
