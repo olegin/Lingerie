@@ -121,6 +121,8 @@ function spider_ajax_save(form_id, event) {
   post_data["mouse_wheel_nav"] = jQuery("input[name=mouse_wheel_nav]:checked").val();
   post_data["keyboard_nav"] = jQuery("input[name=keyboard_nav]:checked").val();
   post_data["possib_add_ffamily"] = jQuery("#possib_add_ffamily").val();
+  post_data["show_thumbnail"] = jQuery("input[name=show_thumbnail]:checked").val();
+  post_data["thumb_size"] = jQuery("input[name=wds_thumb_size]").val();
   /* Css.*/
   post_data["css"] = jQuery("#css").val();
 
@@ -357,6 +359,12 @@ function wds_onload() {
   }
   else {
     bwg_enable_disable('none', 'tr_music_url', 'music0');
+  }
+  if (jQuery("#show_thumbnail1").is(":checked")) {
+    bwg_enable_disable('', 'tr_thumb_size', 'show_thumbnail1');
+  }
+  else {
+    bwg_enable_disable('none', 'tr_thumb_size', 'show_thumbnail0');
   }
 
   jQuery('.wds_rl_butt_groups').each(function(i) {
@@ -850,6 +858,10 @@ function bwg_inputs() {
 function bwg_enable_disable(display, id, current) {
   jQuery("#" + current).attr('checked', 'checked');
   jQuery("#" + id).css('display', display);
+}
+function bwg_enable_disable_autoplay(display, id, current) { 
+  jQuery("#" + current).attr('checked', 'checked');
+  jQuery("." + id).css('visibility', display); 
 }
 
 function change_rl_butt_style(type_key) {
@@ -2636,5 +2648,13 @@ function set_ffamily_value(val) {
       ffamily = val;
     }
     jQuery('#possib_add_ffamily').val(ffamily);
+  }
+}
+
+function wds_check_number() {
+  var number = jQuery('#wds_thumb_size').val();
+  if (number != '' && (number < 0 || number > 1)) {
+      alert('The thumbnail size must be between 0 to 1.');
+      jQuery('#wds_thumb_size').val("");
   }
 }

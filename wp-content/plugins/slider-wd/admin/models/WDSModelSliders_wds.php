@@ -205,6 +205,8 @@ class WDSModelSliders_wds {
       $row->mouse_wheel_nav = 0;
       $row->keyboard_nav = 0;
       $row->possib_add_ffamily = '';
+      $row->show_thumbnail = 0;
+      $row->thumb_size = '0.2';
     }
     return $row;
   }

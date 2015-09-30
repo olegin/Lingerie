@@ -90,6 +90,10 @@ function wds_update($version) {
   if (version_compare($version, '1.0.42') == -1) {
     $wpdb->query("ALTER TABLE " . $wpdb->prefix . "wdsslider ADD `possib_add_ffamily` varchar(255) NOT NULL DEFAULT ''");
   }
+  if (version_compare($version, '1.0.43') == -1) {
+    $wpdb->query("ALTER TABLE `" . $wpdb->prefix . "wdsslider` ADD `show_thumbnail` tinyint(1) NOT NULL DEFAULT 0");
+    $wpdb->query("ALTER TABLE `" . $wpdb->prefix . "wdsslider` ADD `thumb_size` varchar(8) NOT NULL DEFAULT '0.2'");
+  }
   return;
 }
 

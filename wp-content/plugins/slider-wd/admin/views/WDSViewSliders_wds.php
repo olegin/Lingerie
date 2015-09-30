@@ -1261,6 +1261,23 @@ class WDSViewSliders_wds {
                     </td>
                   </tr>
                   <tr>
+                    <td class="spider_label"><label>Show thumbnail on bullet hover: </label></td>
+                    <td>
+                      <input onClick="bwg_enable_disable('', 'tr_thumb_size', 'show_thumbnail1')" type="radio" id="show_thumbnail1" name="show_thumbnail" <?php echo (($row->show_thumbnail) ? 'checked="checked"' : ''); ?> value="1" /><label for="show_thumbnail1">Yes</label>
+                      <input onClick="bwg_enable_disable('none', 'tr_thumb_size', 'show_thumbnail0')" type="radio" id="show_thumbnail0" name="show_thumbnail" <?php echo (($row->show_thumbnail) ? '' : 'checked="checked"'); ?> value="0" /><label for="show_thumbnail0">No</label>
+                      <div class="spider_description"></div>
+                    </td>
+                  </tr>
+                  <tr id="tr_thumb_size">
+                    <td class="spider_label_options">
+                      <label for="wds_thumb_size">Thumbnail Size: </label>
+                    </td>
+                    <td>
+                      <input onblur="wds_check_number()" type="text" id="wds_thumb_size" name="wds_thumb_size" size="15" value="<?php echo $row->thumb_size; ?>" style="display:inline-block;" />
+                      <div class="spider_description">Value must be between 0 to 1.</div>
+                    </td>
+                  </tr>
+                  <tr>
                     <td class="spider_label"><label>Position: </label></td>
                     <td>
                       <select name="bull_position" id="bull_position">

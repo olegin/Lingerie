@@ -62,6 +62,8 @@ class WDSViewSlider {
     $touch_swipe_nav = isset($slider_row->touch_swipe_nav) ? $slider_row->touch_swipe_nav : 1;
     $mouse_wheel_nav = isset($slider_row->mouse_wheel_nav) ? $slider_row->mouse_wheel_nav : 0;
     $keyboard_nav = isset($slider_row->keyboard_nav) ? $slider_row->keyboard_nav : 0;
+    $show_thumbnail = isset($slider_row->show_thumbnail) ? $slider_row->show_thumbnail : 0;
+    $thumb_size = isset($slider_row->thumb_size) ? $slider_row->thumb_size : '0.2';
     $enable_play_paus_butt = $slider_row->play_paus_butt;
     if (!$enable_prev_next_butt && !$enable_play_paus_butt) {
       $enable_slideshow_autoplay = 1;
@@ -139,6 +141,17 @@ class WDSViewSlider {
     $current_image_url = '';
     ?>
     <style>
+     .wds_bulframe_<?php echo $wds; ?> {
+        display: none; 
+        background-image: url(''); 
+        margin: 0px;  
+        position: absolute;
+        z-index: 3;
+        -webkit-transition: left 1s, right 1s;
+        transition: left 1s, right 1s;
+        width: <?php echo $slider_row->width * $thumb_size ?>px;
+        height: <?php echo $slider_row->height * $thumb_size ?>px;
+      }
       #wds_container1_<?php echo $wds; ?> #wds_container2_<?php echo $wds; ?> {
         text-align: <?php echo $slider_row->align; ?>;
         margin: <?php echo $slider_row->glb_margin; ?>px <?php echo $slider_row->full_width ? 0 : ''; ?>;
@@ -492,6 +505,7 @@ class WDSViewSlider {
         font-size: 0;
         margin: 0 auto;
         position: relative;
+        z-index: 15;
       }
       #wds_container1_<?php echo $wds; ?> #wds_container2_<?php echo $wds; ?> .wds_slideshow_dots_<?php echo $wds; ?> {
         display: inline-block;
@@ -675,16 +689,21 @@ class WDSViewSlider {
       }
       <?php
       foreach ($slide_rows as $key => $slide_row) {
+        $thumb_url = $slide_row->type == 'video' ? (wp_get_attachment_url(get_post_thumbnail_id($slide_row->thumb_url)) ? wp_get_attachment_url(get_post_thumbnail_id($slide_row->thumb_url)) : WD_S_URL . '/images/no-video.png') : ($slide_row->type == 'image' ? $slide_row->image_url : $slide_row->thumb_url );
         ?>
         wds_clear_layers_effects_in_<?php echo $wds; ?>["<?php echo $key; ?>"] = [];
         wds_clear_layers_effects_out_<?php echo $wds; ?>["<?php echo $key; ?>"] = [];
         wds_clear_layers_effects_out_before_change_<?php echo $wds; ?>["<?php echo $key; ?>"] = [];
         wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"] = [];
         wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["id"] = "<?php echo $slide_row->id; ?>";
-        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["image_url"] = "<?php echo addslashes(htmlspecialchars_decode ($slide_row->image_url,ENT_QUOTES)); ?>";
-        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["thumb_url"] = "<?php echo addslashes(htmlspecialchars_decode ($slide_row->thumb_url,ENT_QUOTES)); ?>";
+        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["image_url"] = "<?php echo addslashes(htmlspecialchars_decode($slide_row->image_url, ENT_QUOTES)); ?>";
+        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["thumb_url"] = "<?php echo addslashes(htmlspecialchars_decode($slide_row->thumb_url, ENT_QUOTES)); ?>";
         wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["is_video"] = "<?php echo $slide_row->type ?>";
         wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["slide_layers_count"] = 0;
+        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["bg_fit"] = "<?php echo $slider_row->bg_fit; ?>";
+        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["bull_position"] = "<?php echo $bull_position; ?>";
+        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["full_width"] = "<?php echo $slider_row->full_width; ?>";
+        wds_data_<?php echo $wds; ?>["<?php echo $key; ?>"]["image_thumb_url"] = "<?php echo (htmlspecialchars_decode($slide_row->thumb_url, ENT_QUOTES)); ?>";
         <?php
         $layers_row = $this->model->get_layers_row_data($slide_row->id);
         if ($layers_row) {
@@ -719,7 +738,7 @@ class WDSViewSlider {
             <?php
             if ($bull_position != 'none' && $slides_count > 1) {
               ?>
-            <div class="wds_slideshow_dots_container_<?php echo $wds; ?>">
+            <div class="wds_slideshow_dots_container_<?php echo $wds; ?>" onmouseleave="wds_hide_thumb(<?php echo $wds; ?>)">
               <div class="wds_slideshow_dots_thumbnails_<?php echo $wds; ?>">
                 <?php
                 foreach ($slide_rows as $key => $slide_row) {
@@ -727,6 +746,7 @@ class WDSViewSlider {
                     ?>
                 <i id="wds_dots_<?php echo $key; ?>_<?php echo $wds; ?>"
                    class="wds_slideshow_dots_<?php echo $wds; ?> fa <?php echo (($slide_row->id == $current_image_id) ? $bull_style_active . ' wds_slideshow_dots_active_' . $wds : $bull_style_deactive . ' wds_slideshow_dots_deactive_' . $wds); ?>"
+                   <?php echo  $show_thumbnail == 1 ? 'onmouseover="wds_show_thumb(' . $key . ', ' . $wds . ')"' : ''; ?>
                    onclick="wds_change_image_<?php echo $wds; ?>(parseInt(jQuery('#wds_current_image_key_<?php echo $wds; ?>').val()), '<?php echo $key; ?>', wds_data_<?php echo $wds; ?>)" image_id="<?php echo $slide_row->id; ?>"
                    image_key="<?php echo $key; ?>">
                 </i>
@@ -736,6 +756,7 @@ class WDSViewSlider {
                     ?>
                 <span id="wds_dots_<?php echo $key; ?>_<?php echo $wds; ?>"
                       class="wds_slideshow_dots_<?php echo $wds; ?> <?php echo (($slide_row->id == $current_image_id) ? ' wds_slideshow_dots_active_' . $wds : ' wds_slideshow_dots_deactive_' . $wds); ?>"
+                      <?php echo  $show_thumbnail == 1 ? 'onmouseover="wds_show_thumb(' . $key . ', ' . $wds .')"' : ''; ?> 
                       onclick="wds_change_image_<?php echo $wds; ?>(parseInt(jQuery('#wds_current_image_key_<?php echo $wds; ?>').val()), '<?php echo $key; ?>', wds_data_<?php echo $wds; ?>)" 
                       image_id="<?php echo $slide_row->id; ?>" image_key="<?php echo $key; ?>">
                 </span>
@@ -745,6 +766,13 @@ class WDSViewSlider {
                 ?>
               </div>
             </div>
+              <?php 
+              if ($show_thumbnail == 1) {
+                ?>
+              <div class="wds_bulframe_<?php echo $wds; ?>"></div>
+                <?php 
+              }
+              ?>
               <?php
             }
             if ($slider_row->timer_bar_type == 'top' ||  $slider_row->timer_bar_type == 'bottom') {
@@ -784,6 +812,7 @@ class WDSViewSlider {
                   if ($slide_row->id == $current_image_id) {
                     $play_pause_button_display = '';
                     $current_image_url = $slide_row->image_url;
+		    $current_image_url = addslashes(htmlspecialchars_decode($current_image_url, ENT_QUOTES));
                     $current_key = $key;
                     $image_div_num = '';
                   }

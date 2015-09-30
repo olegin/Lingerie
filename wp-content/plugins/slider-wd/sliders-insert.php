@@ -100,6 +100,8 @@ function wds_insert() {
     `mouse_wheel_nav` tinyint(1) NOT NULL,
     `keyboard_nav` tinyint(1) NOT NULL,
     `possib_add_ffamily` varchar(255) NOT NULL,
+    `show_thumbnail` tinyint(1) NOT NULL,
+    `thumb_size` varchar(8) NOT NULL,
     PRIMARY KEY (`id`)
   ) DEFAULT CHARSET=utf8;";
   $wpdb->query($wdsslider);

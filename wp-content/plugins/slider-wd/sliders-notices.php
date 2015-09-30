@@ -201,7 +201,6 @@ class WDS_Notices {
       'link' => '<li><span class="dashicons dashicons-media-text"></span><a target="_blank" href="https://web-dorado.com/wordpress-slider-wd/installing.html">' . __('Check out User Guide', $this->prefix) . '</a></li>
                 <li><span class="dashicons dashicons-sos"></span><a target="_blank" href="https://web-dorado.com/forum/slider-plugin.html">' . __('Get Some Help', $this->prefix) . '</a></li>
                 <li><span class="dashicons dashicons-dismiss"></span><a href="' . $one_week_support . '">' . __('Never show again', $this->prefix) . '</a></li>',
-      
       'int' => 7
     );
     $this->admin_notice($notices);

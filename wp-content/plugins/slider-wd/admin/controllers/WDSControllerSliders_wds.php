@@ -194,6 +194,8 @@ class WDSControllerSliders_wds {
     $mouse_wheel_nav = ((isset($_POST['mouse_wheel_nav'])) ? (int) esc_html(stripslashes($_POST['mouse_wheel_nav'])) : 0);
     $keyboard_nav = ((isset($_POST['keyboard_nav'])) ? (int) esc_html(stripslashes($_POST['keyboard_nav'])) : 0);
     $possib_add_ffamily = ((isset($_POST['possib_add_ffamily'])) ? esc_html(stripslashes($_POST['possib_add_ffamily'])) : '');
+    $show_thumbnail = ((isset($_POST['show_thumbnail'])) ? (int) esc_html(stripslashes($_POST['show_thumbnail'])) : 0);
+    $thumb_size = ((isset($_POST['thumb_size'])) ? esc_html(stripslashes($_POST['thumb_size'])) : '0.2');
 
     $data = array(
       'name' => $name,
@@ -292,6 +294,8 @@ class WDSControllerSliders_wds {
       'mouse_wheel_nav' => $mouse_wheel_nav,
       'keyboard_nav' => $keyboard_nav,
       'possib_add_ffamily' => $possib_add_ffamily,
+      'show_thumbnail' => $show_thumbnail,
+      'thumb_size' => $thumb_size,
     );
 
     if (!$slider_id) {
