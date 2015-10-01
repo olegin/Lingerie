@@ -59,7 +59,8 @@ caption,
 th,
 td {
 	font-weight: normal;
-	text-align: left;
+	text-align: center;
+  word-wrap: normal
 }
 h1,
 h2,
@@ -1986,7 +1987,7 @@ html .gform_wrapper .left_label .gfield_label {
   margin: 0!important;
 }
 html .gform_wrapper .left_label input.medium {
-  width: 400px;
+  width: 230px;
 }
 html .gform_wrapper .left_label select.large {
   width: 385px;
@@ -2745,6 +2746,7 @@ html .gform_wrapper .left_label li.field_sublabel_below .gfield_label {
   margin: 0 1em 0 0;
   display: block;
   width: 100%;
+  
 }
 html body .gform_wrapper label.gfield_label+div.ginput_container {
   margin-top: 0;
