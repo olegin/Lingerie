@@ -123,15 +123,7 @@
   	'template' => 'ticket02.php', 
   	'dpi' => 300,
 	'filename' => 'Ticket {entry_id}.pdf',
-  );
-  $gf_pdf_config[] = array(
-  	'form_id' => 7, 
-	'notifications' => true,
-  	'template' => 'order2.php', 
-  	'dpi' => 300,
-  	'orientation' => 'landscape',
-	'filename' => 'Registration {entry_id}.pdf',
-  );    
+  );  
   /*$gf_pdf_config[] = array(
   	'form_id' => 2, 
   	'notifications' => 'User Notification',
@@ -151,6 +143,11 @@
   	'filename' => 'New PDF Name.pdf', 
   );*/ 
  
+   /*$gf_pdf_config[] = array(
+  	'form_id' => '5`', 
+  	'notifications' => true, 
+  	'filename' => 'Ticket {entry_id}.pdf', 
+  ); */ 
  
  /*
   * ------------------------------------------------------------
