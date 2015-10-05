@@ -727,7 +727,7 @@ class WDSViewSlider {
     </script>
     <div id="wds_container1_<?php echo $wds; ?>">
       <div class="wds_loading">
-        <img src="<?php echo WD_S_URL . '/images/ajax_loader.png'; ?>" class="wds_loading_img" style="float: none; width:50px;" />
+        <img src="<?php echo WD_S_URL . '/images/ajax_loader.png'; ?>" class="wds_loading_img" />
       </div>
       <div id="wds_container2_<?php echo $wds; ?>">
         <div class="wds_slideshow_image_wrap_<?php echo $wds; ?>">

@@ -6,7 +6,7 @@ jQuery("#input_2_21").val('order_en.jpg');
 	jQuery("#field_1_15 label").html("Откуда узнали о выставке ");
 jQuery("#field_1_16 label").html("Какие выставки нижнего белья вы посещали в 2015 году? ");
 }
-  var addprice = 1;
+  var addprice = 0;
   var addpricepr = 0;
   var curentprice = 1;
   var quant1 = 0;
@@ -39,15 +39,15 @@ jQuery("#field_1_16 label").html("Какие выставки нижнего б�
    jQuery("#input_2_19").val(Math.round(isumm5));
   		
   		} else {
-  			var summ1 = (quant1*13900*addprice) + (quant2*15000) + (quant3*2900) + (quant4*24000) + (quant5*70000);
+  			var summ1 = (quant1*20000-quant1*200*addprice) + (quant2*13900) + (quant3*2900);
    jQuery('.rbhead span').html(Math.round(summ1));
    jQuery("#input_2_14").val(Math.round(summ1));
-  	var isumm1 = quant1*13900*addprice;
+  	var isumm1 = quant1*20000-quant1*200*addprice;
    jQuery('.isumm1').html(Math.round(isumm1));
    jQuery("#input_2_15").val(Math.round(isumm1));
    jQuery('.isumm1p').html(addpricepr);
    jQuery("#input_2_20").val(addpricepr);
-   var isumm2 = quant2*15000;
+   var isumm2 = quant2*13900;
    jQuery('.isumm2').html(Math.round(isumm2));
    jQuery("#input_2_16").val(Math.round(isumm2));
     var isumm3 = quant3*2900;
@@ -67,6 +67,11 @@ jQuery("#field_1_16 label").html("Какие выставки нижнего б�
   maincalc ();
   jQuery(".n18").change(function(){
       quant1 = jQuery(this).val();
+       maincalc ();
+    });
+   maincalc ();
+  jQuery(".n19").change(function(){
+      addprice = jQuery(this).val();
        maincalc ();
     });
   jQuery(".n286").change(function(){
