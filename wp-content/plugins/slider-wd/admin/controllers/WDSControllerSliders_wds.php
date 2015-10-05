@@ -158,7 +158,7 @@ class WDSControllerSliders_wds {
     $built_in_watermark_font_size = (isset($_POST['built_in_watermark_font_size']) ? esc_html(stripslashes($_POST['built_in_watermark_font_size'])) : 20);
     $built_in_watermark_font = (isset($_POST['built_in_watermark_font']) ? esc_html(stripslashes($_POST['built_in_watermark_font'])) : '');
     $built_in_watermark_color = (isset($_POST['built_in_watermark_color']) ? esc_html(stripslashes($_POST['built_in_watermark_color'])) : 'FFFFFF');
-    $css = (isset($_POST['css']) ? esc_html(stripslashes($_POST['css'])) : '');
+    $css = (isset($_POST['css']) ? htmlspecialchars_decode((stripslashes($_POST['css'])), ENT_QUOTES) : '');
     $timer_bar_type = (isset($_POST['timer_bar_type']) ? esc_html(stripslashes($_POST['timer_bar_type'])) : 'top');
     if (isset($_POST['enable_time_bar']) && (esc_html(stripslashes($_POST['enable_time_bar'])) == 0)) {
       $timer_bar_type = 'none';

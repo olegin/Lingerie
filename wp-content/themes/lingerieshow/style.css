@@ -1672,12 +1672,24 @@ overflow: visible;
   max-width: 68.9285714286rem;
   margin: 0 auto;
 }
+.bheaderup{
+ width:100%;
+ text-align:center;
+ background: #DEAA78;
+ margin-bottom: 20px;
+ color: #6b3322;
+}
 .bheader{
  text-transform:uppercase; 
- margin-bottom: 20px;
+ margin-bottom: 5px;
+ text-align:center;
 }
 .lbhead{
   
+}
+.cbhead{
+  text-align:center;
+  width:100%;
 }
 .rbhead{
   text-align:right;
