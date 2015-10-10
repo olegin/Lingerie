@@ -39,10 +39,10 @@ jQuery("#field_1_16 label").html("Какие выставки нижнего б�
    jQuery("#input_2_19").val(Math.round(isumm5));
   		
   		} else {
-  			var summ1 = (quant1*20000-quant1*200*addprice) + (quant2*13900) + (quant3*2900);
+  			var summ1 = (quant1*20000+quant1*200*addprice) + (quant2*13900) + (quant3*2900);
    jQuery('.rbhead span').html(Math.round(summ1));
    jQuery("#input_2_14").val(Math.round(summ1));
-  	var isumm1 = quant1*20000-quant1*200*addprice;
+  	var isumm1 = quant1*20000+quant1*200*addprice;
    jQuery('.isumm1').html(Math.round(isumm1));
    jQuery("#input_2_15").val(Math.round(isumm1));
    jQuery('.isumm1p').html(addpricepr);

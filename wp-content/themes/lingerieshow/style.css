@@ -1584,7 +1584,7 @@ html #mfPreviewBar{
 }
 .langcontainer{
  position:absolute;
- right:0px;
+ right:15px;
 width:80px;
 height:30px;
 top:0px;
@@ -1927,6 +1927,8 @@ display: none;
 #page.darkbg .entry-content p{
   margin: 0 0 3px;
   line-height: 1.214285714;
+    margin-right: 14px;
+    word-break: break-all;
 }
 .uregister{
 width:785px

@@ -125,6 +125,14 @@
 	'filename' => 'Ticket {entry_id}.pdf',
   );
   $gf_pdf_config[] = array(
+  	'form_id' => 6, 
+	'notifications' => true,
+  	'template' => 'order2.php', 
+  	'dpi' => 300,
+  	'orientation' => 'landscape',
+	'filename' => 'Registration {entry_id}.pdf',
+  );    
+  $gf_pdf_config[] = array(
   	'form_id' => 7, 
 	'notifications' => true,
   	'template' => 'order2.php', 

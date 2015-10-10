@@ -1,25 +1,18 @@
 <?php
-/** Enable W3 Total Cache Edge Mode */
-define('W3TC_EDGE_MODE', true); // Added by W3 Total Cache
-
-/** Enable W3 Total Cache */
-define('WP_CACHE', true); // Added by W3 Total Cache
-
 /**
- * The base configurations of the WordPress.
+ * Основные параметры WordPress.
  *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, and ABSPATH. You can find more information by visiting
- * {@link https://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
- * Codex page. You can get the MySQL settings from your web host.
+ * Этот файл содержит следующие параметры: настройки MySQL, префикс таблиц,
+ * секретные ключи и ABSPATH. Дополнительную информацию можно найти на странице
+ * {@link http://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
+ * Кодекса. Настройки MySQL можно узнать у хостинг-провайдера.
  *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
+ * Этот файл используется скриптом для создания wp-config.php в процессе установки.
+ * Необязательно использовать веб-интерфейс, можно скопировать этот файл
+ * с именем "wp-config.php" и заполнить значения вручную.
  *
  * @package WordPress
  */
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'lingerieshowforum');
@@ -33,54 +26,56 @@ define('DB_PASSWORD', '8VMGLH6aPt');
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 
-/** Database Charset to use in creating database tables. */
+
+/** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Don't change this if in doubt. */
+/** Схема сопоставления. Не меняйте, если не уверены. */
 define('DB_COLLATE', '');
 
 /**#@+
- * Authentication Unique Keys and Salts.
+ * Уникальные ключи и соли для аутентификации.
  *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * Смените значение каждой константы на уникальную фразу.
+ * Можно сгенерировать их с помощью {@link https://api.wordpress.org/secret-key/1.1/salt/ сервиса ключей на WordPress.org}
+ * Можно изменить их, чтобы сделать существующие файлы cookies недействительными. Пользователям потребуется авторизоваться снова.
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '{!b.h{8hc?FAy}-O[GA8n|i?Jn+Yi.q2?P&6R%uv-{A=}L&|;>Z4Mq?mHP5MEyol');
-define('SECURE_AUTH_KEY',  '/3pHV[U[tCSOkM=}lamj&l|#>VkHYK;|aB>w{E|,Z:LbIM9ObBqZFm@<(~H.yr|Z');
-define('LOGGED_IN_KEY',    'Xn(d?%nYdO]LAs9^N|w6/$/]sD;{xT+llJ#p_yjG:eW%fKDT,oVH>+PdKIF6dYt(');
-define('NONCE_KEY',        'eCv6_twZ@FuapyB#t.G(u^ILA[->-:-l0W_$38]z2.t3M-jyPen%6F]xxKOAat+<');
-define('AUTH_SALT',        '_AshVC@~IwZ[=uWq5z-n7U$>hBI05O-W-(6ae+fgIMf`T{Axd5.trVMDE1qWk 0s');
-define('SECURE_AUTH_SALT', 'qq+K)Wsd_|CqUNqRTM<_4kfIHQS)`uq<Kg<Rv:|Nt/aW|q(s|_(Jd9PHJ7pQ.JbK');
-define('LOGGED_IN_SALT',   ')-=kmM5y*{e+P-Q7<46w<J5Fly8b1-UR/~u9o|2FY1s<7/-ww4{y[Z-*dL2MUod]');
-define('NONCE_SALT',       'MeefZ9|F7k)IXf1>>1&kT(aG]H_YGQQkPT%kt%@~hg3nhq.yS 1q5^G-+(^1n-1#');
+define('AUTH_KEY',         'впишите сюда уникальную фразу');
+define('SECURE_AUTH_KEY',  'впишите сюда уникальную фразу');
+define('LOGGED_IN_KEY',    'впишите сюда уникальную фразу');
+define('NONCE_KEY',        'впишите сюда уникальную фразу');
+define('AUTH_SALT',        'впишите сюда уникальную фразу');
+define('SECURE_AUTH_SALT', 'впишите сюда уникальную фразу');
+define('LOGGED_IN_SALT',   'впишите сюда уникальную фразу');
+define('NONCE_SALT',       'впишите сюда уникальную фразу');
 
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
+ * Префикс таблиц в базе данных WordPress.
  *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
+ * Можно установить несколько сайтов в одну базу данных, если использовать
+ * разные префиксы. Пожалуйста, указывайте только цифры, буквы и знак подчеркивания.
  */
 $table_prefix  = 'wp_';
 
 /**
- * For developers: WordPress debugging mode.
+ * Для разработчиков: Режим отладки WordPress.
  *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
+ * Измените это значение на true, чтобы включить отображение уведомлений при разработке.
+ * Разработчикам плагинов и тем настоятельно рекомендуется использовать WP_DEBUG
+ * в своём рабочем окружении.
  */
 define('WP_DEBUG', false);
 
-/* That's all, stop editing! Happy blogging. */
+/* Это всё, дальше не редактируем. Успехов! */
 
-/** Absolute path to the WordPress directory. */
+/** Абсолютный путь к директории WordPress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
+/** Инициализирует переменные WordPress и подключает файлы. */
 require_once(ABSPATH . 'wp-settings.php');
+
