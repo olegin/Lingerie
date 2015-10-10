@@ -1755,9 +1755,7 @@ display:none;
   font-size: 10px;
   vertical-align: -webkit-baseline-middle;
 }
-#post-52 .entry-content {
-margin-top: 24px;
-}
+
 #post-54 .entry-content tr td:first-child{
   border: 1px solid #ededed;
   padding: 6px 10px 6px 0;
@@ -1848,7 +1846,7 @@ margin-left:0px;
 margin-left:0px;
 }
 #gal_front_form_0{
-margin-top:-30px;
+margin-top:0px;
 }
 html #bwg_container1_0 #bwg_container2_0 .bwg_standart_thumbnails_0 {
   max-width: 965px;
@@ -3229,4 +3227,27 @@ display: none!important;
  font-size: 14px;
  border: 0px;
  padding: 3px 0px 3px 0px; 
+}
+
+#bwg_container1_0 #bwg_container2_0 .bwg_title_spun2_0 {
+    color: #FFFFFF !important;
+    font-family: 'FuturaFuturis-Regular', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+#field_5_8 .gfield_label {
+margin-left: 36px !important;
+}
+#field_5_11 .gfield_label {
+margin-left: 36px !important;
+}
+#field_5_2 .gfield_label {
+margin-left: 36px !important;
+}
+#field_5_4 .gfield_label {
+margin-left: 36px !important;
+}
+#field_5_10 .gfield_label {
+margin-left: 36px !important;
 }
