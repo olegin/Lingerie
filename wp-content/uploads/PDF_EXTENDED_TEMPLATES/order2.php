@@ -37,171 +37,187 @@ position: absolute;
 }
 .inp1{
 position: absolute;
-width:30px;
-height:15px;
-left:990px;
-top:153px;
+width:100%;
+left:35px;
+top:410px;
 font-size: 14px;
-text-align: center;
+text-align: left;
 }
 .inp2{
 position: absolute;
-width:40px;
-height:15px;
-left:1045px;
-top:128px;
-font-size: 10px;
-text-align: center;
-
+width:100%;
+left:35px;
+top:460px;
+font-size: 14px;
+text-align: left;
 }
 .inp3{
 position: absolute;
-width:20px;
-height:15px;
-left:672px;
-top:180px;
-font-size: 10px;
-text-align: center;
+width:100%;
+left:35px;
+top:508px;
+font-size: 14px;
+text-align: left;
 }
 .inp4{
 position: absolute;
-width:20px;
-height:15px;
-left:672px;
-top:205px;
-font-size: 10px;
-text-align: center;
+width:100%;
+left:35px;
+top:556px;
+font-size: 14px;
+text-align: left;
 }
 .inp5{
 position: absolute;
-width:20px;
-height:15px;
-left:672px;
-top:240px;
-font-size: 10px;
-text-align: center;
+width:100%;
+left:35px;
+top:604px;
+font-size: 14px;
+text-align: left;
 }
 .inp6{
 position: absolute;
-width:20px;
-height:15px;
-left:672px;
-top:268px;
-font-size: 10px;
-text-align: center;
+width:100%;
+left:35px;
+top:652px;
+font-size: 14px;
+text-align: left;
 }
 .inp7{
 position: absolute;
-width:20px;
-height:15px;
-left:672px;
-top:300px;
-font-size: 10px;
-text-align: center;
+width:100%;
+left:585px;
+top:410px;
+font-size: 14px;
+text-align: left;
 }
 .inp8{
 position: absolute;
-width:160px;
-height:15px;
-left:330px;
-top:690px;
-font-size: 12px;
+width:100%;
+left:585px;
+top:460px;
+font-size: 14px;
 text-align: left;
 }
 .inp9{
 position: absolute;
-width:160px;
-height:15px;
-left:430px;
-top:720px;
-font-size: 12px;
+width:100%;
+left:585px;
+top:508px;
+font-size: 14px;
 text-align: left;
 }
 .inp10{
 position: absolute;
-width:160px;
-height:15px;
-left:67px;
-top:692px;
-font-size: 12px;
+width:100%;
+left:585px;
+top:556px;
+font-size: 14px;
 text-align: left;
 }
 .inp11{
 position: absolute;
-width:160px;
-height:15px;
-left:67px;
-top:718px;
-font-size: 12px;
+width:100%;
+left:585px;
+top:604px;
+font-size: 14px;
 text-align: left;
 }
 .inp12{
 position: absolute;
-width:160px;
-height:15px;
-left:67px;
-top:747px;
-font-size: 12px;
+width:100%;
+left:585px;
+top:652px;
+font-size: 14px;
 text-align: left;
 }
 .inp13{
 position: absolute;
-width:40px;
-height:15px;
-left:772px;
-top:180px;
-font-size: 20px;
-text-align: center;
+width:100%;
+left:295px;
+top:556px;
+font-size: 14px;
+text-align: left;
 }
 .inp14{
 position: absolute;
-width:40px;
-height:15px;
-left:772px;
-top:205px;
-font-size: 12px;
-text-align: center;
+width:100%;
+left:845px;
+top:410px;
+font-size: 14px;
+text-align: left;
 }
 .inp15{
 position: absolute;
-width:40px;
-height:15px;
-left:772px;
-top:240px;
-font-size: 12px;
-text-align: center;
+width:100%;
+left:845px;
+top:460px;
+font-size: 14px;
+text-align: left;
 }
 .inp16{
 position: absolute;
-width:40px;
-height:15px;
-left:772px;
-top:268px;
-font-size: 12px;
-text-align: center;
+width:100%;
+left:893px;
+top:205px;
+font-size: 14px;
+text-align: left;
 }
 .inp17{
 position: absolute;
-width:40px;
-height:15px;
-left:772px;
-top:300px;
-font-size: 12px;
-text-align: center;
+width:100%;
+left:953px;
+top:205px;
+font-size: 14px;
+text-align: left;
 }
 .inp18{
 position: absolute;
-width:127px;
-height:146px;
-left:900px;
-top:176px;
-text-align: center;
+width:100%;
+left:1023px;
+top:205px;
+font-size: 14px;
+text-align: left;
 }
-img{
-width:127px;
-height:146px;
-border:0px!important;
-box-shadow: none;
+.inp19{
+position: absolute;
+width:100%;
+left:893px;
+top:250px;
+font-size: 14px;
+text-align: left;
+}
+.inp20{
+position: absolute;
+width:100%;
+left:1023px;
+top:250px;
+font-size: 14px;
+text-align: left;
+}
+.inp21{
+position: absolute;
+width:100%;
+left:893px;
+top:285px;
+font-size: 14px;
+text-align: left;
+}
+.inp22{
+position: absolute;
+width:100%;
+left:1023px;
+top:285px;
+font-size: 14px;
+text-align: left;
+}
+.inp23{
+position: absolute;
+width:100%;
+left:1023px;
+top:335px;
+font-size: 14px;
+text-align: left;
 }
 </style>
 </head>
@@ -239,28 +255,30 @@ box-shadow: none;
 body{
 background:url("http://lingerie-show-forum.ru/wp-content/uploads/PDF_EXTENDED_TEMPLATES/electronic_ticket/order_0216.png") no-repeat;
 }	
-</style>			
-<div class="inp1">{СТЕНД №:7}</div>
-<div class="inp2">{sum1:14}</div>
-<div class="inp3">{Оборудованная площадь:1}</div>
-<div class="inp4">{Регистрационный взнос:2}</div>
-<div class="inp5">{Брендирование стен стенда:3}</div>
-<div class="inp6">{Показы — сет  (2 лука х 3 дня):5}</div>
-<div class="inp7">{Реклама:6}</div>
-<div class="inp8">{УЧАСТНИК / ПЛАТЕЛЬЩИК:9}</div>
-<div class="inp9">( {Руководитель (ФИО):12} )</div>
-<div class="inp10">{Контактное лицо:10}</div>
-<div class="inp11">{Тел.:11}</div>
-<div class="inp12">{Email:13}</div>
-<div class="inp13">{sum2:15}</div>
-<div class="inp14">{sum3:16}</div>
-<div class="inp15">{sum4:17}</div>
-<div class="inp16">{sum5:18}</div>
-<div class="inp17">{sum6:19}</div>
-<div class="inp18"><img src="/wp-content/uploads/img/{Hidden Field:22}" alt=""/></div>
-
-
-
+</style>
+<div class="inp1">{Name:1}</div>	
+<div class="inp2">{Uradr:2}</div>	
+<div class="inp3">{FactAddr:3}</div>
+<div class="inp4">{Tel:4}</div>
+<div class="inp5">{Kontact:5}</div>
+<div class="inp6">{FIO:6}</div>
+<div class="inp7">{INN:7}</div>
+<div class="inp8">{OKPO:8}</div>
+<div class="inp9">{RS:9}</div>
+<div class="inp10">{Bankname:10}</div>
+<div class="inp11">{KS:11}</div>
+<div class="inp12">{BIK:12}</div>
+<div class="inp13">{Email:13}</div>
+<div class="inp14">{KPP:14}</div>
+<div class="inp15">{OGRN:15}</div>
+<div class="inp16">{REGcount:16}</div>
+<div class="inp17">{REGadd:17}</div>
+<div class="inp18">{REGsum:18}</div>
+<div class="inp19">{Plosh:19}</div>
+<div class="inp20">{PloshSum:20}</div>
+<div class="inp21">{Brend:21}</div>
+<div class="inp22">{BrendSum:22}</div>
+<div class="inp23">{Sum:23}</div>
            
            <!-- let's build our body content -->
        

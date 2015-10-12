@@ -1992,11 +1992,12 @@ html .gform_wrapper .gfield_error .gfield_label {
 }
 html .gform_wrapper .left_label .gfield_label {
   float: left; 
-  width: 220px;
+  width: 225px;
   font-weight: 400;
   font-size: 12px;
   padding-right: 0px;
   margin: 0!important;
+  line-height:12px;
 }
 html .gform_wrapper .left_label input.medium {
   width: 230px;
@@ -2048,6 +2049,24 @@ html .page-id-219 li label,
  #input_2_18,
  #input_2_19,
  #input_2_20{
+display: none!important;
+}
+ #field_6_16,
+ #field_6_17,
+ #field_6_18,
+ #field_6_19,
+ #field_6_20,
+ #field_6_21,
+ #field_6_22,
+ #field_6_23,
+ #input_6_16,
+ #input_6_17,
+ #input_6_18,
+ #input_6_19,
+ #input_6_20,
+ #input_6_21,
+ #input_6_22,
+ #input_6_23{
 display: none!important;
 }
 html .gform_wrapper ul li.gfield {

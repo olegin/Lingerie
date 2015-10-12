@@ -41,18 +41,18 @@ jQuery("#field_1_16 label").html("Какие выставки нижнего б�
   		} else {
   			var summ1 = (quant1*20000+quant1*200*addprice) + (quant2*13900) + (quant3*2900);
    jQuery('.rbhead span').html(Math.round(summ1));
-   jQuery("#input_2_14").val(Math.round(summ1));
+   jQuery("#input_6_23").val(Math.round(summ1));
   	var isumm1 = quant1*20000+quant1*200*addprice;
    jQuery('.isumm1').html(Math.round(isumm1));
-   jQuery("#input_2_15").val(Math.round(isumm1));
+   jQuery("#input_6_18").val(Math.round(isumm1));
    jQuery('.isumm1p').html(addpricepr);
    jQuery("#input_2_20").val(addpricepr);
    var isumm2 = quant2*13900;
    jQuery('.isumm2').html(Math.round(isumm2));
-   jQuery("#input_2_16").val(Math.round(isumm2));
+   jQuery("#input_6_20").val(Math.round(isumm2));
     var isumm3 = quant3*2900;
    jQuery('.isumm3').html(Math.round(isumm3));
-	jQuery("#input_2_17").val(Math.round(isumm3));
+	jQuery("#input_6_22").val(Math.round(isumm3));
     var isumm4 = quant4*24000;
    jQuery('.isumm4').html(Math.round(isumm4));
    jQuery("#input_2_18").val(Math.round(isumm4));
@@ -67,21 +67,23 @@ jQuery("#field_1_16 label").html("Какие выставки нижнего б�
   maincalc ();
   jQuery(".n18").change(function(){
       quant1 = jQuery(this).val();
+	  jQuery("#input_6_16").val(quant1)
        maincalc ();
     });
    maincalc ();
   jQuery(".n19").change(function(){
       addprice = jQuery(this).val();
+	  jQuery("#input_6_17").val(addprice)
        maincalc ();
     });
   jQuery(".n286").change(function(){
       quant2 = jQuery(this).val();
-      jQuery("#input_2_2").val(quant2);
+      jQuery("#input_6_19").val(quant2);
        maincalc ();
     });
   jQuery(".n46").change(function(){
       quant3 = jQuery(this).val();
-      jQuery("#input_2_3").val(quant3);
+      jQuery("#input_6_21").val(quant3);
        maincalc ();
     });
   jQuery(".n991").change(function(){
