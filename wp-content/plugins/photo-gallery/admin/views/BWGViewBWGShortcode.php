@@ -744,13 +744,13 @@ class BWGViewBWGShortcode {
                 </tbody>
 
                 <!--Lightbox view-->
-                <?php if ($option_row->thumb_click_action != 'open_lightbox') { ?>
                 <tbody id="tbody_popup_other">
                   <tr id="tr_thumb_click_action">
                     <td class="spider_label"><label>Thumb click action: </label></td>
                     <td>
                       <input type="radio" name="thumb_click_action" id="thumb_click_action_1" value="open_lightbox" <?php if ($option_row->thumb_click_action == 'open_lightbox') echo 'checked="checked"'; ?> onchange="bwg_thumb_click_action()" /><label for="thumb_click_action_1">Open lightbox</label><br />
-                      <input type="radio" name="thumb_click_action" id="thumb_click_action_2" value="redirect_to_url" <?php if ($option_row->thumb_click_action == 'redirect_to_url') echo 'checked="checked"'; ?> onchange="bwg_thumb_click_action()" /><label for="thumb_click_action_2">Redirect to url</label>
+                      <input type="radio" name="thumb_click_action" id="thumb_click_action_2" value="redirect_to_url" <?php if ($option_row->thumb_click_action == 'redirect_to_url') echo 'checked="checked"'; ?> onchange="bwg_thumb_click_action()" /><label for="thumb_click_action_2">Redirect to url</label><br />
+                      <input type="radio" name="thumb_click_action" id="thumb_click_action_3" value="do_nothing" <?php if ($option_row->thumb_click_action == 'do_nothing') echo 'checked="checked"'; ?> onchange="bwg_thumb_click_action()" /><label for="thumb_click_action_3">Do Nothing</label>
                     </td>
                   </tr>
                   <tr id="tr_thumb_link_target">
@@ -761,7 +761,6 @@ class BWGViewBWGShortcode {
                     </td>
                   </tr>
                 </tbody>
-                <?php } ?>
                 <tbody id="tbody_popup">
                   <tr id="tr_popup_fullscreen">
                     <td title="Enable full width feature for the lightbox." class="spider_label">
@@ -1548,13 +1547,16 @@ class BWGViewBWGShortcode {
                 else {
                   jQuery("#popup_ctrl_btn_no").attr('checked', 'checked');
                 }
-                if (short_code['thumb_click_action'] != 'redirect_to_url' || !short_code['thumb_click_action']) {
+                if (!short_code['thumb_click_action'] || short_code['thumb_click_action'] == 'undefined' || short_code['thumb_click_action'] == 'open_lightbox') {
                   jQuery("#thumb_click_action_1").attr('checked', 'checked'); 
                 }
-                else {
+                else if (short_code['thumb_click_action'] == 'redirect_to_url') {
                   jQuery("#thumb_click_action_2").attr('checked', 'checked');
                 }
-                if (short_code['thumb_link_target'] == 1 || !short_code['thumb_link_target']) {
+                else if (short_code['thumb_click_action'] == 'do_nothing') {
+                  jQuery("#thumb_click_action_3").attr('checked', 'checked');
+                }
+                if (short_code['thumb_link_target'] == 1 || !short_code['thumb_link_target'] || short_code['thumb_link_target'] == 'undefined') {
                   jQuery("#thumb_link_target_yes").attr('checked', 'checked'); 
                 }
                 else {

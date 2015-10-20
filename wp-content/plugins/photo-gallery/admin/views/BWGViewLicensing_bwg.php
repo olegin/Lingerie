@@ -43,6 +43,7 @@ class BWGViewLicensing_bwg {
         <span>Photo Gallery Tags Cloud Widget</span>
         <span>Instagram Integration</span>
         <span>AddThis Integration</span>
+        <span>Add-ons Support</span>
       </div>
       <div id="featurs_table2">
         <span style="padding-top: 18px;height: 39px;">Free</span>
@@ -63,6 +64,7 @@ class BWGViewLicensing_bwg {
         <span class="no"></span>
         <span class="no"></span>
         <span class="no"></span>
+        <span class="no"></span>
       </div>
       <div id="featurs_table3">
         <span>Pro Version</span>
@@ -76,6 +78,7 @@ class BWGViewLicensing_bwg {
         <span class="yes"></span>
         <span class="yes"></span>
         <span>15</span>
+        <span class="yes"></span>
         <span class="yes"></span>
         <span class="yes"></span>
         <span class="yes"></span>
