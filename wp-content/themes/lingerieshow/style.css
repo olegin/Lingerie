@@ -1482,9 +1482,9 @@ text-align:center;
 .mainlogo-cont{
   display: block;
   top: 25px;
-  left: 120px;
+  left: 2px;
   position: absolute;
-  width: 760px;
+  width: 965px;
 }
 .mainlogo-cont object{
 height: 72px;
